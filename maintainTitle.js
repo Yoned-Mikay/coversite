@@ -1,5 +1,5 @@
 // maintainTitle.js
-const desiredTitle = "Your Desired Title"; // Replace with your desired title
+const desiredTitle = "APNotes.net :: US History Notes"; // Replace with your desired title
 
 function maintainTitle() {
     if (document.title !== desiredTitle) {
@@ -8,4 +8,4 @@ function maintainTitle() {
 }
 
 // Check and maintain the title every 50 milliseconds
-setInterval(maintainTitle, 50);
+setInterval(maintainTitle, 100);
