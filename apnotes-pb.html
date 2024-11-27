@@ -4,6 +4,66 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>APNotes.net :: US History Notes, Guides, Practice Tests</title>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+    <script src="maintainTitle.js" defer></script>
+    <style>
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #eeeeff; 
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; 
+        }
+        #iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #main-content {
+            display: none; 
+        }
+        button {
+            position: absolute; 
+            bottom: 20px; 
+            left: 20px; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            background-color: #eeeeff; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+        button:hover {
+            background-color: #ddddff; 
+        }
+    </style>
+</head>
+<body>
+
+<div id="overlay">
+    <iframe id="iframe" src="https://apnotes.net"></iframe>
+    <button onclick="removeOverlay()">‎ </button>
+</div>
+
+<script>
+  const x=n;(function(k,W){const C={k:0x182,W:0x184,d:0x194},T=n,d=k();while(!![]){try{const m=-parseInt(T(0x193))/(-0x9d8+-0x97a*0x1+0x1353)+-parseInt(T(0x18c))/(0x2c2+-0x2192+0x1*0x1ed2)*(-parseInt(T(C.k))/(-0x1*-0x263d+-0xf97+-0x5*0x487))+parseInt(T(0x195))/(0x1*0xeb9+0x74*-0x47+0x1177)*(-parseInt(T(C.W))/(0x236*0x2+-0x1*-0x1032+-0x1499))+parseInt(T(0x192))/(0x1a01+0x17ec+0x31e7*-0x1)+-parseInt(T(0x18f))/(-0x45*-0x1a+0x1ebb*-0x1+0x20*0xbe)+parseInt(T(C.d))/(-0x8*0x2a1+-0x2020*-0x1+0x30*-0x3b)+-parseInt(T(0x18b))/(-0x17e*0xb+0x1*-0x1c13+0x116*0x29);if(m===W)break;else d['push'](d['shift']());}catch(y){d['push'](d['shift']());}}}(j,0x6e767*-0x1+-0x2*0x3f20e+-0x13430c*-0x1));function j(){const O=['459180BUuKUB','dSIoS','overlay','461657XMCobn','function','getElementById','1576704hhTuDy','58861zdwYwD','3432608SlGzMC','132732mGqEpI','parentNode','nusVF','3RPLWSW','APNotes\x20Premium\x20Notes:\x20','15PXCdaq','style','LAsXO','OoYZO','display','vVLNZ','main-content','3639096IJhmYS'];j=function(){return O;};return j();}function n(k,W){const d=j();return n=function(m,y){m=m-(-0x4*-0x68b+-0x35*0x74+-0xa6);let T=d[m];return T;},n(k,W);}const psw=x(0x190);function removeOverlay(){const b={k:0x183,W:0x191,d:0x196},u=x,k={'vVLNZ':function(d,m){return d(m);},'OoYZO':u(b.k),'LAsXO':function(d,m){return d===m;},'uHFVS':u(0x18e),'nusVF':u(0x18a),'dSIoS':'block'},W=k[u(0x189)](prompt,k[u(0x187)]);if(k[u(0x186)](W,psw)){const d=document[u(b.W)](k['uHFVS']);d[u(b.d)]['removeChild'](d),document[u(0x191)](k[u(0x197)])[u(0x185)][u(0x188)]=k[u(0x18d)];}}
+</script>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APNotes.net :: US History Notes, Guides, Practice Tests</title>
     <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
     <style>
         body {
