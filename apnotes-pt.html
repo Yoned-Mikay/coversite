@@ -1,0 +1,65 @@
+<!DOCTYPE html><html><head>
+
+<div class="center">
+<button class="button button3" onclick="openNewTabWithIframe()">Fullscreen (<b>USE THIS</b>)</button>
+</div>
+
+<script>
+function openNewTabWithIframe() {
+  // Open a new tab with about:blank
+  var newTab = window.open('about:blank');
+
+  // Write an iframe into the new tab with styles for full screen
+  newTab.document.write(`
+    <html>
+      <head>
+        <style>
+          html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+          }
+          iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove the default border */
+          }
+        </style>
+      </head>
+      <body>
+        <iframe src="https://gooooooooooooooooooooooooooooooooooooooooooogle-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/wergboy/NLP@3cd7c854d047f364125194f75adeaa75aecf7985/pt/pt.xml&container=ig
+"></iframe>
+      </body>
+    </html>
+  `);
+  newTab.document.close(); // Close the document to render the content
+}
+</script>
+
+
+<br><br>
+
+<div class="center">
+<iframe id="myIframe" src="https://gooooooooooooooooooooooooooooooooooooooooooogle-opensocial.googleusercontent.com/gadgets/ifr?url=https://cdn.jsdelivr.net/gh/wergboy/NLP@3cd7c854d047f364125194f75adeaa75aecf7985/pt/pt.xml&amp;container=ig
+
+" width="1056px" height="650px" style="width: 1850px; height: 850px;"></iframe>
+</div>
+
+  <script>
+      function resizeIframe() {
+          var iframe = document.getElementById('myIframe');
+          var width = window.innerWidth - 50;
+          var height = window.innerHeight - 50;
+          iframe.style.width = width + 'px';
+          iframe.style.height = height + 'px';
+      }
+
+      // Call the function initially to set the size on page load
+      window.onload = resizeIframe;
+
+      // Add an event listener to resize the iframe when the window is resized
+      window.onresize = resizeIframe;
+  </script>
+
+</body></html>
