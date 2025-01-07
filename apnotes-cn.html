@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APNotes.net :: US History Notes, Guides, Practice Tests</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif; 
+            background: linear-gradient(to bottom, #a0d8e1, #ffffff);
+            color: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #ruffle-container {
+            width: 800px;
+            height: 800px; 
+            border: 1px solid #ccc;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div id="ruffle-container"></div>
+
+<script>
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+
+    const container = document.getElementById("ruffle-container");
+    container.appendChild(player);
+
+    player.load("assets/CatNinja.swf"); 
+
+    function resizePlayer() {
+        player.style.width = container.clientWidth + 'px';
+        player.style.height = container.clientHeight + 'px';
+    }
+
+    window.addEventListener('resize', resizePlayer);
+
+    resizePlayer();
+</script>
+
+</body>
+</html>
+
+<script>
+    function updateTitle() {
+        document.title = "APNotes.net :: US History Notes, Guides, Practice Tests";
+    }
+    setInterval(updateTitle, 100);
+</script>
+
