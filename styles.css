@@ -1,36 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif; 
-    background: linear-gradient(to bottom, #a0d8e1, #ffffff);
-    color: #2c3e50;
+    font-family: 'Merriweather', sans-serif; 
+    background: linear-gradient(to bottom, #32CD32, #00CED1); 
+    color: #ffffff; 
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    font-weight: bold; 
 }
 
 .container {
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    background: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.85); 
+    font-weight: bold; 
 }
 
 .title-container {
-    background: rgba(255, 255, 255, 0.9);
+    background: #00CED1; 
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
+    font-weight: bold; 
 }
 
 h1 {
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Merriweather', sans-serif; 
     font-size: 2.5em;
     margin: 0; 
-    font-weight: 700; 
+    font-weight: bold; 
+    color: #ffffff; 
 }
 
 .button-container {
@@ -38,52 +44,73 @@ h1 {
     justify-content: center;
     gap: 15px;
     margin-bottom: 20px;
+    font-weight: bold; 
 }
 
 .button-container.new-row {
-    margin-top: 20px; /* Add some extra space between rows */
+    margin-top: 20px; 
 }
 
 .button {
     text-decoration: none;
-    background-color: #0077b6;
+    background-color: #32CD32; 
     color: white;
     padding: 15px 25px;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease; 
     font-size: 1.2em;
-    font-family: 'Open Sans', sans-serif; 
+    font-family: 'Merriweather', sans-serif; 
+    font-weight: bold; 
 }
 
 .button:hover {
-    background-color: #0096c7;
+    background-color: #00CED1; 
+    transform: scale(1.05); 
 }
 
 .notes-container {
-    background: rgba(255, 255, 255, 0.9);
+    background: #32CD32; 
     padding: 15px;
     border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
     margin-top: 20px;
+    font-weight: bold; 
 }
 
 .notes-container h2 {
-    font-family: 'Roboto', sans-serif; 
+    font-family: 'Merriweather', sans-serif;
     font-size: 1.8em;
     margin: 0; 
-    font-weight: 600; 
+    font-weight: bold;
+    color: #ffffff; 
 }
 
 .notes-container ul {
     list-style-type: none; 
     padding: 0;
     text-align: left;
+    font-weight: bold;
+    font-family: 'Merriweather', sans-serif; 
 }
 
 .notes-container li {
     margin: 5px 0;
     font-size: 1.1em;
-    font-family: 'Open Sans', sans-serif; 
+    font-family: 'Merriweather', sans-serif; 
     line-height: 1.5; 
-    color: #34495e; 
+    color: #f8f8f8;
+    font-weight: bold; 
+}
+
+
+/* starting luh cursor code */
+
+#follower {
+    position: absolute;
+    width: 50px; 
+    height: 50px; 
+    pointer-events: none; /* stop it mouse */
+    transition: transform 0.1s ease; /* smoothy :)))) */
+    transform: translate(-50%, -50%); /* center image */
+    z-index: 9999; /* made the z index super high to make it show on top of ALLL */
 }
