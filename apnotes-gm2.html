@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APNotes.net :: US History Notes, Guides, Practice Tests</title>
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+    <script src="maintainTitle.js" defer></script>
+    <style>
+        #overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #eeeeff; 
+            z-index: 9999;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; 
+        }
+        #iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        #main-content {
+            display: none; 
+        }
+        button {
+            position: absolute; 
+            bottom: 20px; 
+            left: 20px; 
+            padding: 10px 20px; 
+            font-size: 16px; 
+            background-color: #eeeeff; 
+            border: none; 
+            border-radius: 5px; 
+            cursor: pointer; 
+        }
+        button:hover {
+            background-color: #ddddff; 
+        }
+    </style>
+</head>
+<body>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APNotes.net :: US History Notes, Guides, Practice Tests</title>
+    <script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Open Sans', sans-serif; 
+            background: linear-gradient(to bottom, #a0d8e1, #ffffff);
+            color: #2c3e50;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #ruffle-container {
+            width: 800px;
+            height: 800px; 
+            border: 1px solid #ccc;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+<div id="ruffle-container"></div>
+
+<script>
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+
+    const container = document.getElementById("ruffle-container");
+    container.appendChild(player);
+
+    player.load("assets/gunmayhem2.swf"); 
+
+    function resizePlayer() {
+        player.style.width = container.clientWidth + 'px';
+        player.style.height = container.clientHeight + 'px';
+    }
+
+    window.addEventListener('resize', resizePlayer);
+
+    resizePlayer();
+</script>
+
+</body>
+</html>
+
+<script>
+    function updateTitle() {
+        document.title = "APNotes.net :: US History Notes, Guides, Practice Tests";
+    }
+    setInterval(updateTitle, 100);
+</script>
