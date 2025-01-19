@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>APNotes.net :: US History Notes, Guides, Practice Tests</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/favicon.png" type="image/x-icon">
+    <style>
+        .loading-bar {
+            width: 100%;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+
+        .progress {
+            width: 0;
+            height: 20px;
+            background: linear-gradient(to right, #32CD32, #00CED1);
+            transition: width 2s ease;
+        }
+
+        .output {
+            background: rgba(0, 0, 0, 0.85);
+            color: #32CD32;
+            padding: 15px;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1em;
+            white-space: pre-wrap;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        #loading-section h2, #loading-text {
+            color: #000000; 
+        }
+
+        #result-section h2, #result-section p {
+            color: #000000;
+        }
+
+        .button {
+            text-decoration: none;
+            color: white;
+            padding: 15px 25px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.2em;
+            font-family: 'Merriweather', sans-serif;
+            font-weight: bold;
+            outline: none;
+            border: none;
+        }
+
+        .button-container {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title-container">
+            <h1>Exploit Finder</h1>
+        </div>
+        <div class="notes-container">
+            <h2>Choose Your MacBook Update</h2>
+            <select id="update-selector">
+                <option value="default">-- Select an Update --</option>
+                <option value="14+">macOS 15+</option>
+                <option value="14+">macOS 14+</option>
+                <option value="13.1">macOS 13.1</option>
+                <option value="12.6.1">macOS 12.6.1</option>
+                <option value="11.7.5">macOS 11.7.5</option>
+            </select>
+        </div>
+        <div class="notes-container">
+            <h2>Enter Your Serial Number</h2>
+            <input type="text" id="serial-input" placeholder="Enter Serial Number" />
+        </div>
+        <div class="button-container">
+            <button class="button" onclick="startJailbreak()">Find Possible Exploits</button>
+        </div>
+        <div id="loading-section" style="display: none;">
+            <h2>Checking for Profiles...</h2>
+            <div class="loading-bar">
+                <div class="progress" id="progress-bar"></div>
+            </div>
+            <p id="loading-text">Initializing system checks...</p>
+        </div>
+        <div id="result-section" style="display: none;">
+            <p>Sorry, your MacBook isn't compatible with any current known profile exploits. However, try downloading this script I made, and running it via PyCharm as a final check:</p>
+            <div class="button-container">
+                <a href="assets/pycharmscript.txt" download class="button">Get PyCharm Script</a>
+            </div>
+        </div>
+        
+    <script>
+        function startJailbreak() {
+            const update = document.getElementById('update-selector').value;
+            const serial = document.getElementById('serial-input').value;
+
+            if (update === 'default' || !serial.trim()) {
+                alert('Please select an update and enter a serial number!');
+                return;
+            }
+
+            document.getElementById('loading-section').style.display = 'block';
+            const progressBar = document.getElementById('progress-bar');
+            const loadingText = document.getElementById('loading-text');
+
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += 20;
+                progressBar.style.width = progress + '%';
+
+                switch (progress) {
+                    case 20:
+                        loadingText.textContent = 'Scanning local files...';
+                        break;
+                    case 40:
+                        loadingText.textContent = 'Connecting to exploit servers...';
+                        break;
+                    case 60:
+                        loadingText.textContent = 'Validating exploits...';
+                        break;
+                    case 80:
+                        loadingText.textContent = 'Compiling results...';
+                        break;
+                    case 100:
+                        clearInterval(interval);
+                        loadingText.textContent = 'Scan complete!';
+                        document.getElementById('loading-section').style.display = 'none';
+                        document.getElementById('result-section').style.display = 'block';
+                        break;
+                }
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
