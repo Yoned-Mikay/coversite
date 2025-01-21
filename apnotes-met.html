@@ -93,7 +93,7 @@
             <p id="loading-text">Initializing system checks...</p>
         </div>
         <div id="result-section" style="display: none;">
-            <p>Sorry, your MacBook isn't compatible with any current known profile exploits. However, try downloading this script I made and run it via PyCharm as a final check:</p>
+            <p id="result-message"></p>
             <div class="button-container">
                 <a href="assets/pycharmscript.txt" download class="button">Get PyCharm Script</a>
             </div>
@@ -136,6 +136,12 @@
                         loadingText.textContent = 'Scan complete!';
                         document.getElementById('loading-section').style.display = 'none';
                         document.getElementById('result-section').style.display = 'block';
+
+                        if (serial.trim() === "MFCPWWRX99") {
+                            document.getElementById('result-message').textContent = "An exploit has been found for your MacBook! Exploit: [TS-Termium]";
+                        } else {
+                            document.getElementById('result-message').textContent = "Sorry, your MacBook isn't compatible with any current known profile exploits. However, try downloading this script I made and run it via PyCharm as a final check:";
+                        }
                         break;
                 }
             }, 1000);
