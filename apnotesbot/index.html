@@ -184,6 +184,22 @@
             text-shadow: 0 0 6px rgba(174, 81, 255, 0.3);
         }
 
+        .main-website-link {
+            position: absolute;
+            top: 1em;
+            right: 1em;
+            padding: 0.5em 1em;
+            background-color: rgba(110, 72, 170, 0.3);
+            border-radius: 0.5em;
+            border: 1px solid #6e48aa;
+            font-size: 0.9em;
+            transition: 0.2s;
+        }
+
+        .main-website-link:hover {
+            background-color: rgba(110, 72, 170, 0.5);
+        }
+
         @media (max-width: 48em) {
             h1 {
                 font-size: 3em;
@@ -202,12 +218,21 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .main-website-link {
+                position: static;
+                margin: 1em auto;
+                display: block;
+                width: fit-content;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="backdrop"></div>
+
+    <a href="https://freakgpt.pages.dev/" class="main-website-link">Visit Main Website</a>
 
     <main>
         <div class="hero">
