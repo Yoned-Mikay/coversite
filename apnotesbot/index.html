@@ -88,6 +88,29 @@
             box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
         }
 
+        .red-button {
+            color: white !important;
+            background-color: #ff3330 !important;
+            box-shadow: 0 0 10px rgba(255, 51, 48, 0.7);
+            animation: redPulse 1.5s infinite alternate;
+        }
+
+        @keyframes redPulse {
+            from { box-shadow: 0 0 10px rgba(255, 51, 48, 0.7); }
+            to { box-shadow: 0 0 20px rgba(255, 51, 48, 0.9), 
+                            0 0 30px rgba(255, 51, 48, 0.5); }
+        }
+
+        .red-button:hover {
+            background-color: #ff1a17 !important;
+            box-shadow: 0 0 15px rgba(255, 51, 48, 0.9),
+                        0 0 25px rgba(255, 51, 48, 0.6) !important;
+        }
+
+        .red-button p {
+            color: white !important;
+        }
+
         .hero {
             display: flex;
             flex-direction: column;
@@ -184,22 +207,6 @@
             text-shadow: 0 0 6px rgba(174, 81, 255, 0.3);
         }
 
-        .main-website-link {
-            position: absolute;
-            top: 1em;
-            right: 1em;
-            padding: 0.5em 1em;
-            background-color: rgba(110, 72, 170, 0.3);
-            border-radius: 0.5em;
-            border: 1px solid #6e48aa;
-            font-size: 0.9em;
-            transition: 0.2s;
-        }
-
-        .main-website-link:hover {
-            background-color: rgba(110, 72, 170, 0.5);
-        }
-
         @media (max-width: 48em) {
             h1 {
                 font-size: 3em;
@@ -218,21 +225,12 @@
                 width: 100%;
                 justify-content: center;
             }
-
-            .main-website-link {
-                position: static;
-                margin: 1em auto;
-                display: block;
-                width: fit-content;
-            }
         }
     </style>
 </head>
 
 <body>
     <div class="backdrop"></div>
-
-    <a href="https://freakgpt.pages.dev/" class="main-website-link">Visit Main Website</a>
 
     <main>
         <div class="hero">
@@ -242,8 +240,11 @@
                 Powered by Groq's LPU and Llama 3 technology
             </p>
             <div class="hero-buttons">
-                <a class="button" href="chat.html">
+                <a class="button" href="apnotesbot/chat.html">
                     <p>Start Chatting</p>
+                </a>
+                <a class="button red-button" href="https://freakgpt.pages.dev/" target="_blank">
+                    <p>Visit Main Website</p>
                 </a>
             </div>
         </div>
