@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>APNotes.net :: US History Notes, Guides, Practice Tests</title>
+    <title>FreakGPT</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
     <style>
         body {
@@ -111,45 +111,27 @@
             color: white !important;
         }
 
-        .hero {
+        .container {
             display: flex;
             flex-direction: column;
             width: calc(100% - 4em);
-            max-width: 40em;
-            padding-top: 12em;
-            margin: 0 auto;
+            max-width: 48em;
+            margin: 12em auto 0 auto;
+            padding: 2em;
             text-align: center;
             gap: 2em;
         }
 
-        .hero > p {
-            max-width: 31rem;
-            font-size: 1.25em;
-            margin: 0 auto;
-            text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            gap: 1em;
-            z-index: 1;
-        }
-
-        .features {
-            width: calc(100% - 4em);
-            max-width: 48em;
-            margin: 6em auto 0 auto;
-            padding: 2em;
+        .notice {
             background-color: #09090b80;
             border: 1.5px solid #ffffff19;
             border-radius: 1em;
+            padding: 2em;
             box-shadow: 0 0.25em 3em -0.5em #00000080,
                         0 0 15px rgba(255, 255, 255, 0.1);
         }
 
-        .features h2 {
+        .notice h2 {
             font-family: Epilogue, sans-serif;
             font-size: 1.75em;
             margin-top: 0;
@@ -157,54 +139,12 @@
             text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
         }
 
-        .features ul {
-            padding-left: 1.5em;
-            list-style-type: none;
-        }
-
-        .features li {
-            margin-bottom: 1em;
-            position: relative;
-            padding-left: 1.5em;
-            text-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
-        }
-
-        .features li:before {
-            content: "•";
-            color: #6e48aa;
-            position: absolute;
-            left: 0;
-            text-shadow: 0 0 6px rgba(110, 72, 170, 0.5);
-        }
-        
-        .credits {
-            margin-top: 2em;
-            font-size: 0.85em;
-            color: #6e48aa;
-            text-align: right;
-            text-shadow: 0 0 6px rgba(110, 72, 170, 0.5);
-        }
-
-        .note {
-            width: calc(100% - 4em);
-            max-width: 48em;
-            margin: 2em auto;
-            padding: 1.5em;
-            background-color: #6e48aa20;
-            border: 1.5px solid #6e48aa40;
-            border-radius: 1em;
-            box-shadow: 0 0 10px rgba(110, 72, 170, 0.2);
-        }
-
-        .note strong {
-            color: white;
-            text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
-        }
-
-        .note a {
-            color: #ae51ff;
-            text-decoration: underline;
-            text-shadow: 0 0 6px rgba(174, 81, 255, 0.3);
+        .buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1em;
+            z-index: 1;
         }
 
         @media (max-width: 48em) {
@@ -212,11 +152,11 @@
                 font-size: 3em;
             }
 
-            .hero > p {
-                font-size: 1em;
+            .container {
+                margin-top: 6em;
             }
 
-            .hero-buttons {
+            .buttons {
                 flex-direction: column;
                 align-items: center;
             }
@@ -233,28 +173,20 @@
     <div class="backdrop"></div>
 
     <main>
-        <div class="hero">
+        <div class="container">
             <h1>FreakGPT</h1>
-            <p>
-                The uncensored AI experience with ultra-fast responses<br>
-                Powered by Groq's LPU and Llama 3 technology
-            </p>
-            <div class="hero-buttons">
+            
+            <div class="notice">
+                <h2>Important Notice</h2>
+                <p>This interface may not work on school-restricted computers. Please use the official website if you encounter any access issues.</p>
+            </div>
+
+            <div class="buttons">
                 <a class="button" href="chat.html">
                     <p>Start Chatting</p>
                 </a>
                 <a class="button red-button" href="https://freakgpt.pages.dev/" target="_blank">
-                    <p>Visit Main Website</p>
-                </a>
-            </div>
-        </div>
-
-        <div class="features">
-            <h2>Important Notice</h2>
-            <p>FreakGPT may not work on school-restricted computers due to network filters and security policies. If you're having trouble accessing FreakGPT from your school device, please use the official website instead.</p>
-            <div class="hero-buttons" style="margin-top: 1.5em;">
-                <a class="button red-button" href="https://freakgpt.pages.dev/" target="_blank">
-                    <p>Go to Official Website</p>
+                    <p>Go to Main Website</p>
                 </a>
             </div>
         </div>
