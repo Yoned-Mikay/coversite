@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="icon" href="https://ghostly.pages.dev/ghost.ico" type="image/x-icon"/>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreakGPT — Uncensored AI Chat</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
+    <style>
+        body {
+            font-family: Inter, sans-serif;
+            color: rgba(255, 255, 255, 0.95);
+            background-color: #000000;
+            margin: 0;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeIn 1s ease-in forwards;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        a {
+            color: rgba(255, 255, 255, 0.95);
+            text-decoration: none;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+        }
+
+        p {
+            color: #dde4fd80;
+            line-height: 1.5;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-family: Epilogue, sans-serif;
+            font-size: 4em;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            margin: 0;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                         0 0 20px rgba(255, 255, 255, 0.4),
+                         0 0 30px rgba(255, 255, 255, 0.2);
+            animation: pulse 2s infinite alternate;
+        }
+
+        @keyframes pulse {
+            from { text-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+                              0 0 20px rgba(255, 255, 255, 0.4),
+                              0 0 30px rgba(255, 255, 255, 0.2); }
+            to { text-shadow: 0 0 15px rgba(255, 255, 255, 1),
+                            0 0 25px rgba(255, 255, 255, 0.6),
+                            0 0 35px rgba(255, 255, 255, 0.3); }
+        }
+
+        .backdrop {
+            background: radial-gradient(circle at 50% 50%, #8a2be2 0%, #000000 60%);
+            width: 100%;
+            height: 70em;
+            position: absolute;
+            z-index: -1;
+            opacity: 0.3;
+        }
+
+        .button {
+            display: flex;
+            align-items: center;
+            gap: 0.5em;
+            color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 0.5em;
+            padding: 0 1.5em;
+            width: fit-content;
+            height: 3em;
+            transition: 0.2s;
+            font-weight: 500;
+            box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+
+        .button p {
+            color: rgba(0, 0, 0, 0.9);
+            text-shadow: none;
+        }
+
+        .button:hover {
+            background-color: rgba(255, 255, 255, 1);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.5);
+        }
+
+        .hero {
+            display: flex;
+            flex-direction: column;
+            width: calc(100% - 4em);
+            max-width: 40em;
+            padding-top: 12em;
+            margin: 0 auto;
+            text-align: center;
+            gap: 2em;
+        }
+
+        .hero > p {
+            max-width: 31rem;
+            font-size: 1.25em;
+            margin: 0 auto;
+            text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 1em;
+            z-index: 1;
+        }
+
+        .features {
+            width: calc(100% - 4em);
+            max-width: 48em;
+            margin: 6em auto 0 auto;
+            padding: 2em;
+            background-color: #09090b80;
+            border: 1.5px solid #ffffff19;
+            border-radius: 1em;
+            box-shadow: 0 0.25em 3em -0.5em #00000080,
+                        0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .features h2 {
+            font-family: Epilogue, sans-serif;
+            font-size: 1.75em;
+            margin-top: 0;
+            margin-bottom: 1em;
+            text-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+
+        .features ul {
+            padding-left: 1.5em;
+            list-style-type: none;
+        }
+
+        .features li {
+            margin-bottom: 1em;
+            position: relative;
+            padding-left: 1.5em;
+            text-shadow: 0 0 4px rgba(255, 255, 255, 0.1);
+        }
+
+        .features li:before {
+            content: "•";
+            color: #6e48aa;
+            position: absolute;
+            left: 0;
+            text-shadow: 0 0 6px rgba(110, 72, 170, 0.5);
+        }
+        
+        .credits {
+            margin-top: 2em;
+            font-size: 0.85em;
+            color: #6e48aa;
+            text-align: right;
+            text-shadow: 0 0 6px rgba(110, 72, 170, 0.5);
+        }
+
+        .note {
+            width: calc(100% - 4em);
+            max-width: 48em;
+            margin: 2em auto;
+            padding: 1.5em;
+            background-color: #6e48aa20;
+            border: 1.5px solid #6e48aa40;
+            border-radius: 1em;
+            box-shadow: 0 0 10px rgba(110, 72, 170, 0.2);
+        }
+
+        .note strong {
+            color: white;
+            text-shadow: 0 0 6px rgba(255, 255, 255, 0.2);
+        }
+
+        .note a {
+            color: #ae51ff;
+            text-decoration: underline;
+            text-shadow: 0 0 6px rgba(174, 81, 255, 0.3);
+        }
+
+        @media (max-width: 48em) {
+            h1 {
+                font-size: 3em;
+            }
+
+            .hero > p {
+                font-size: 1em;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .button {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="backdrop"></div>
+
+    <main>
+        <div class="hero">
+            <h1>FreakGPT</h1>
+            <p>
+                The uncensored AI experience with ultra-fast responses<br>
+                Powered by Groq's LPU and Llama 3 technology
+            </p>
+            <div class="hero-buttons">
+                <a class="button" href="chat.html">
+                    <p>Start Chatting</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="features">
+            <h2>Key Features</h2>
+            <ul>
+                <li>Barely any content restrictions or filters</li>
+                <li>Unfiltered, uncensored AI responses</li>
+                <li>Multiple Llama 3 models with different capabilities</li>
+                <li>Markdown support for rich formatting</li>
+                <li>Persistent conversation history</li>
+                <li>Lightning-fast response times</li>
+            </ul>
+            <div class="credits">Put together by Cyclone / Advils&Hashbrowns</div>
+        </div>
+
+        <div class="note">
+            <strong>Note:</strong> You'll need a Groq API key to use this interface. 
+            Get one for free at <a href="https://console.groq.com/keys" target="_blank">Groq Cloud</a>.
+        </div>
+    </main>
+</body>
+</html>
